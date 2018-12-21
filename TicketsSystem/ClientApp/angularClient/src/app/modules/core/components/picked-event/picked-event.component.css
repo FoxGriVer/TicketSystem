@@ -1,0 +1,27 @@
+.infoAboutAnEvent {
+    margin-top: 2%;
+    margin-bottom: 2%;    
+}
+
+.eventDescriptionBlock {
+    text-align: justify;
+}
+
+.eventImage {
+    border-radius: 8%;
+    border: 2;
+}
+
+.tableWithCinima{
+    margin-top: 4%;
+}
+
+.infoBlock {
+    margin-top: 3%;
+    font-size: 1.2em;
+}
+
+*[data-href] {
+    cursor: pointer;    
+}
+ 

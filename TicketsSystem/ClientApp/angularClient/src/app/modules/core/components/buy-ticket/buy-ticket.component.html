@@ -1,0 +1,57 @@
+<div class="mt-5 buyTicketBlock">
+    <div>
+        <h2 class="offset-3">Покупка билета</h2>
+        <hr>
+        <div class= "row offset-2">
+            <div class="oneInfoRow">
+                <div class="col-12 row">
+                    <div class="col-6 labelTicket">Дата и время:</div>
+                    <div class="col-6 labelTicket">Кол-во билетов:</div>
+                </div>
+                <div class="col-12 row">
+                    <div class="col-6 infoLabel">{{ event.dateTime | date:'d MMMM HH:mm' }}</div>
+                    <div class="col-6 infoLabel">
+                        <input [(ngModel)]="numberOfTickets" (ngModelChange)="countPrice()" placeholder="Кол-во билетов" class="form-control here" type="number" maxlength="2">
+                    </div>
+                </div>
+            </div>
+            <div class="oneInfoRow">
+                <div class="col-12 row">
+                    <div class="col-7 labelTicket">Место проведения:</div>
+                    <div class="col-5 labelTicket">Общая сумма к оплате:</div>
+                </div>
+                <div class="col-12 row">
+                    <div class="col-7 infoLabel">{{ event.buildingName }} {{ event.hallName }}</div>
+                    <div class="col-5 infoLabel">{{ sumAmmount }}</div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <form class="offset-2">
+            <div class="row form-group">
+                <label class="col-3">Email:*</label> 
+                <div class="col-9">
+                    <input placeholder="Email" name="email" [(ngModel)]="userInformation.email" class="form-control" 
+                    required #email="ngModel" type="email" >
+                </div>
+            </div>   
+            <div class="row form-group">
+                <label class="col-3">Номер карты:*</label> 
+                <div class="col-9">
+                    <input placeholder="Номер карты" class="form-control here" required="required" type="number" 
+                    [(ngModel)]="userInformation.cardNumber" #cardNumber="ngModel" name="cardNumber">
+                </div>
+            </div>  
+            <div class="row form-group">
+                <label class="col-6 customC">Согласен с правилами:*</label> 
+                <div class="col-2">
+                    <input class="form-control customCheckBox" required="required" type="checkbox" [(ngModel)]="rulesAccepted" #acceptRules="ngModel" name="acceptRules">
+                </div>
+                <div class="col-4">
+                    <input (click)="buyTickets()" name="submit" type="button" class="btn btn-primary" value="Купить билет" [disabled]="email.invalid || cardNumber.invalid || acceptRules.invalid" />
+                </div>
+            </div>             
+        </form>
+        
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.cardElement {
+    margin-top: 1%;    
+}
+
+.cardElement a {
+    color: black;
+}
+
+.topBlock {
+    justify-content:center; 
+    margin-top: 2%;
+}
+
+.eventTypeBlock {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.typeOfEventHeader {
+    text-align: center;
+}

@@ -1,0 +1,24 @@
+.buyTicketBlock {
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.oneInfoRow{
+    margin-bottom: 5%;
+}
+
+.labelTicket {
+    color: gray;
+    font-size: 0.9em;
+}
+
+.infoLabel {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.customCheckBox {
+    top: 5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+}

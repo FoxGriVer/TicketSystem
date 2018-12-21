@@ -1,0 +1,59 @@
+<div>
+    <!-- <div class="">
+        <div class="row topBlock">
+            <div style="padding-left: 8%;">
+                <a href="">
+                    <h1>AФИША</h1>
+                </a>
+            </div>
+            <div style="padding-left: 5%;">
+                <a href="">
+                    <h1>РАСПИСАНИЕ</h1>
+                </a>
+            </div>
+        </div>
+        
+    </div> -->
+    <div class="concertsBlock eventTypeBlock">
+        <h1 class="typeOfEventHeader">Концерты</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div *ngFor= "let event of concertEvents" class="cardElement">   
+                    <div class="col-4 offset-4">
+                        <a [routerLink]="[ '/event', event.eventId ]">
+                            <div class="card " style="width: 15rem;">
+                                <img class="card-img-top" src="{{event.poster}}">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">{{event.eventName}}</h5>                               
+                                </div>
+                            </div>
+                        </a>                    
+                    </div>             
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cinemaBlock eventTypeBlock">
+            <h1 class="typeOfEventHeader">Кинофильмы</h1>
+            <div class="container-fluid">
+                <div class="row">
+                    <div *ngFor= "let event of cinemaEvents" class="cardElement">   
+                        <div class="col-4 offset-4">
+                            <a [routerLink]="[ '/event', event.eventId ]">
+                                <div class="card " style="width: 15rem;">
+                                    <img class="card-img-top" src="{{event.poster}}">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">{{event.eventName}}</h5>                               
+                                    </div>
+                                </div>
+                            </a>                    
+                        </div>             
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+</div>

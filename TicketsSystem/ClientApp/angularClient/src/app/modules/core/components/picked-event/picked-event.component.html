@@ -1,0 +1,54 @@
+<div class="offset-1">
+    <div class="row infoAboutAnEvent">
+        <div class="col-10">
+            <h1>{{entertainmentEvent.eventName}}</h1>
+            <div class="row">
+                <div class="col-9 eventDescriptionBlock">
+                    <div>
+                        {{ entertainmentEvent.description }}
+                    </div>
+                    <div *ngIf="!cinemaType" class="infoBlock" style="width: 15rem;">
+                        <b>Место проведения:</b>
+                        {{ entertainmentEvent.buildingName }}<br>
+                        <b>Адрес:</b>
+                        {{ entertainmentEvent.address }}<br>
+                        <b>Дата:</b>
+                        {{ entertainmentEvent.dateTime | date:'d MMMM'}}<br>
+                        <b>Время:</b>
+                        {{ entertainmentEvent.dateTime | date:'HH:mm'}}<br>
+                        <b>Цена:</b>
+                        {{ entertainmentEvent.price | currency:'RUB' }}<br>                                              
+                    </div>               
+                         
+                    <div *ngIf="cinemaType" class="tableWithCinima">
+                        <table id="example" class="table table-striped table-dark table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Дата</th>
+                                    <th scope="col">Время</th>
+                                    <th scope="col">Кинотеатр</th>
+                                    <th scope="col">Зал</th>
+                                    <th scope="col">Цена</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let session of entertainmentEventWithAllSessions" data-href="link" (click)="clickBuyTicket(session.eventInHallId)">
+                                    <td scope="row">{{ session.dateTime | date:'d MMMM'}}</td>
+                                    <td>{{ session.dateTime | date:'HH:mm'}}</td>
+                                    <td>{{session.buildingName}}</td>
+                                    <td>{{session.hallName}}</td>
+                                    <td>{{session.price}}</td>
+                                </tr>   
+                            </tbody>                                                     
+                        </table>
+                    </div>
+                </div>                
+                <div class="offset-1 col-2">
+                    <img class="eventImage border" style="width: 15rem;" src="{{entertainmentEvent.poster}}">                    
+                    <button (click)="clickBuyTicket(entertainmentEvent.eventInHallId)" *ngIf="!cinemaType" class="btn btn-primary offset-4 mt-5">Приобрести билет</button>
+                </div>                
+            </div>
+        </div>            
+    </div>        
+            
+</div>

@@ -1,0 +1,29 @@
+<div>
+    <div class="offset-4">
+        <h1>Авторизация пользователя</h1>
+        <div class="col-4 offset-1">
+            <div class="form-group">
+                <br>
+                <label>Адрес электронной почты</label>
+                <input type="email" [(ngModel)]="loginUser.email" class="form-control" #email="ngModel" required/>
+                <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
+                    Не указан адрес электронной почты
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" [(ngModel)]="loginUser.password" class="form-control" #password="ngModel" required />
+                <div [hidden]="password.valid || password.untouched" class="alert alert-danger">
+                    Не указан пароль
+                </div>
+            </div>            
+            <a routerLink="createAccount">Создать аккаунт</a>
+            <br>
+            <br>
+            <div class="row">
+                <input type="button" [disabled]="email.invalid || password.invalid" value="Авторизироваться" (click)="tryLogin()"  class="btn btn-success" />
+                <input type="button" routerLink="../" value="Отмена"  class="btn btn-warning offset-1" />
+            </div>
+        </div>
+    </div>
+</div>

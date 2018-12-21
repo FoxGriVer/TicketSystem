@@ -1,0 +1,62 @@
+<div class="offset-1 mt-4 mb-4">
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Личный кабинет пользователя </h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form>                          
+                          <div class="form-group row">
+                            <label for="name" class="col-4 col-form-label">Имя</label> 
+                            <div class="col-8">
+                              <input [(ngModel)]="authorizedUser.firstName" id="name" name="name" placeholder="Имя" class="form-control here" type="text">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="lastname" class="col-4 col-form-label">Фамилия</label> 
+                            <div class="col-8">
+                              <input [(ngModel)]="authorizedUser.secondName" id="lastname" name="lastname" placeholder="Фамилия" class="form-control here" type="text">
+                            </div>
+                          </div>    
+                          <div class="form-group row">
+                            <label for="phoneNumber" class="col-4 col-form-label">Номер телефона</label> 
+                            <div class="col-8">
+                              <input [(ngModel)]="authorizedUser.phone" id="phoneNumber" name="phoneNumber" placeholder="Номер телефона" class="form-control here" type="number">
+                            </div>
+                          </div>          
+                          <div class="form-group row">
+                            <label for="cardNumber" class="col-4 col-form-label">Номер карты</label> 
+                            <div class="col-8">
+                              <input [(ngModel)]="authorizedUser.cardNumber" id="cardNumber" name="cardNumber" placeholder="Номер карты" class="form-control here" type="number">
+                            </div>
+                          </div>                                             
+                          <div class="form-group row">
+                            <label for="email" class="col-4 col-form-label">Email*</label> 
+                            <div class="col-8">
+                              <input [(ngModel)]="authorizedUser.email" id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text">
+                            </div>
+                          </div>                                                 
+                          <div class="form-group row">
+                            <label for="newpass" class="col-4 col-form-label">New Password</label> 
+                            <div class="col-8">
+                              <input [(ngModel)]="authorizedUser.password" id="newpass" name="newpass" placeholder="New Password" class="form-control here" type="password">
+                            </div>
+                          </div> 
+                          <div class="form-group row">
+                            <button routerLink="boughtTicketsHistory" class="btn btn-primary col-4">Просмотреть историю покупок</button>
+                            <div class="col-7">
+                              <button (click)="updatePersonalInfo()" name="submit" type="submit" class="btn btn-primary">Обновить настройки профиля</button>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
